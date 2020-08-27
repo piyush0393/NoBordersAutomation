@@ -126,14 +126,81 @@ public class ComposeMessageHelper {
 	@FindBy(xpath = "//label[contains(text(),'Photo')]")
 	public WebElement PhotoLabel;
 	
+	@FindBy(xpath = "//label[contains(text(),'Photo (1)')]")
+	public WebElement PhotoLabelOnePhotoAdded;
+	
 	@FindBy(xpath = "//div[@class='photo-section image-left-div cdk-drag']//i[@class='fa fa-times-circle']")
 	public WebElement PhotoSectionRemoveButton;
 	
-	//@FindBy(xpath = "")
+	@FindBy(xpath = "//button[@class='upload-button pointer']//span[contains(text(),'Upload')]")
+	public WebElement PhotoUploadButtonText;
 	
+	@FindBy(xpath = "//button[@class='upload-button pointer']")
+	public WebElement PhotoUploadButton;
 	
+	@FindBy(xpath = "//i[@class='fa fa-times-circle close']")
+	public WebElement SelectedPhotoCrossIcon;
 	
+	@FindBy(xpath = "//a[contains(text(),'Add Link')]")
+	public WebElement AddLinkToPhoto;
 	
+	@FindBy(xpath = "//img[@class='profile']")
+	public WebElement AddedPhoto;
+	
+	@FindBy(xpath = "//nb-card[@class='addLink-modal']")
+	public WebElement AddLinkModalBox;
+	
+	@FindBy(xpath = "//nb-card-header[@class='link-header']")
+	public WebElement AddLinkModalHeader;
+	
+	@FindBy(xpath = "//i[@class='fa fa-times nb-icon-left']")
+	public WebElement AddLinkModalCrossButton;
+	
+	@FindBy(xpath = "//input[@placeholder='Enter URL']")
+	public WebElement AddLinkModalEnterURL;
+	
+	@FindBy(xpath = "//button[@class='btn btn-success pointer']")
+	public WebElement AddLinkModalSubmitButton;
+	
+	@FindBy(xpath = "//button[contains(text(),'Submit')]")
+	public WebElement AddLinkModalSubmitText;
+	
+	@FindBy(xpath = "//label[contains(text(),'Audio')]")
+	public WebElement AudioLabel;
+	
+	@FindBy(xpath = "//label[contains(text(),'Audio (1)')]")
+	public WebElement AudioLabelOneAudioAdded;
+	
+	@FindBy(xpath = "//div[@class='compose-body']//div[3]//div[1]//div[1]//div[1]//label[2]//i[1]")
+	public WebElement AudioSectionRemoveButton;
+	
+	@FindBy(xpath = "//div[contains(@class,'compose-body')]//div[3]//div[2]//button[1]//span[1]")
+	public WebElement AudioUploadButtonText;
+	
+	@FindBy(xpath = "//div[contains(@class,'compose-body')]//div[3]//div[2]//button[1]")
+	public WebElement AudioUploadButton;
+	
+	@FindBy(xpath = "//i[contains(@class,'fa fa-spinner fa-spin text-black')]")
+	public WebElement WaitRotatingLoaderButton;
+	
+	@FindBy(xpath = "//audio[contains(@class,'sent-body')]")
+	public WebElement AudioPauseButtton;
+	
+	@FindBy(xpath = "//i[contains(@class,'fa fa-times-circle close')]")
+	public WebElement AudioSelectedCrossButton;
+	
+	@FindBy(xpath = "//label[contains(text(),'Video')]")
+	public WebElement VideoLabel;
+	
+	@FindBy(xpath = "//div[@id='cdk-drop-list-3']//div[4]//div[1]//div[1]//div[1]//label[2]//i[1]")
+	public WebElement VideoSectionRemoveButton;
+	
+	@FindBy(xpath = "//div[@id='cdk-drop-list-3']//div[4]//div[2]//button[1]")
+	public WebElement VideoUploadButton;
+	
+	@FindBy(xpath = "//i[contains(@class,'aero-icon down-up')]")
+	public WebElement PreviewOpenUpButton;
+	 
 	
 	
 	
