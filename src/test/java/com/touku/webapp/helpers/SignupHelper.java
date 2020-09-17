@@ -131,11 +131,17 @@ public class SignupHelper {
 	@FindBy(xpath = "//input[contains(@class,'customised-control-input')]")
 	public WebElement TermsCheckBox;   //isChecked() condition check
 	
+	@FindBy(xpath = "//span[contains(@class,'customised-control-indicator')]")
+	public WebElement TermsCheckBox2;
+	
 	@FindBy(xpath = "//h3[contains(text(),'ANGELIUM Terms of Use')]")
 	public WebElement AngeliumTermsnconditions;
 	
 	@FindBy(xpath = "//button[contains(@class,'float-right terms-btn')]")
 	public WebElement TermsCloseBtn;
+	
+	@FindBy(xpath = "//button[contains(text(),'Close')]")
+	public WebElement TermsnConditionsCloseBtn;
 	
 	
 	/*Sample Locator and WebElement

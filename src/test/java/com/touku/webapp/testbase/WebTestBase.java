@@ -11,7 +11,38 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import com.touku.webapp.utilities.WebTestListener;
+import com.touku.webapp.helpers.AddFriendHelper;
+import com.touku.webapp.helpers.AdminHomeHelper;
+import com.touku.webapp.helpers.AppDownloadHelper;
+import com.touku.webapp.helpers.ChannelHelper;
+import com.touku.webapp.helpers.ComposeMessageHelper;
+import com.touku.webapp.helpers.ComposeScenarioHelper;
+import com.touku.webapp.helpers.CreateNewChannelHelper;
+import com.touku.webapp.helpers.CreateNewGroupHelper;
+import com.touku.webapp.helpers.CustomerSupportHelper;
+import com.touku.webapp.helpers.FAQHelper;
+import com.touku.webapp.helpers.GeneralChatHelper;
+import com.touku.webapp.helpers.GeneralHelper;
+import com.touku.webapp.helpers.GeneralHomeHelper;
+import com.touku.webapp.helpers.GeneralSettingHelper;
+import com.touku.webapp.helpers.GreetingMessageHelper;
+import com.touku.webapp.helpers.HomePageHelper;
+import com.touku.webapp.helpers.InsightsAnalyticsHelper;
+import com.touku.webapp.helpers.InvitationHelper;
+import com.touku.webapp.helpers.LoginBonusHelper;
+import com.touku.webapp.helpers.LoginHelper;
+import com.touku.webapp.helpers.MessageListHelper;
+import com.touku.webapp.helpers.MoreHelper;
+import com.touku.webapp.helpers.OneToOneChatFollowersHelper;
+import com.touku.webapp.helpers.OneToOneChatHelper;
+import com.touku.webapp.helpers.ProfileHelper;
+import com.touku.webapp.helpers.ScenarioListHelper;
+import com.touku.webapp.helpers.SettingHelper;
+import com.touku.webapp.helpers.SideMenuHelper;
 import com.touku.webapp.helpers.SignupHelper;
+import com.touku.webapp.helpers.SocialLoginHelper;
+import com.touku.webapp.helpers.TimelineHelper;
+import com.touku.webapp.helpers.UserAccountHelper;
 import com.touku.webapp.utilities.CaptureScreenshots;
 
 import org.testng.annotations.AfterClass;
@@ -65,6 +96,37 @@ public class WebTestBase {
 	public static ChromeOptions options;
 	
 	protected SignupHelper signupHelper;
+	protected AddFriendHelper addfriendHelper;
+	protected AdminHomeHelper adminhomeHelper;
+	protected AppDownloadHelper appdownloadHelper;
+	protected ChannelHelper channelHelper;
+	protected ComposeMessageHelper composeMessageHelper;
+	protected ComposeScenarioHelper composeScenarioHelper;
+	protected CreateNewChannelHelper createnewChannelHelper;
+	protected CreateNewGroupHelper createnewGroupHelper;
+	protected  CustomerSupportHelper customerSupportHelper;
+	protected FAQHelper faqHelper;
+	protected GeneralChatHelper generalChatHelper;
+	protected GeneralHelper generalHelper;
+	protected GeneralHomeHelper generalHomeHelper;
+	protected GeneralSettingHelper generalSettingHelper;
+	protected GreetingMessageHelper greetingMessageHelper;
+	protected HomePageHelper homePageHelper;
+	protected InsightsAnalyticsHelper insightsAnalyticsHelper;
+	protected InvitationHelper invitationHelper;
+	protected LoginBonusHelper loginBonusHelper;
+	protected LoginHelper loginHelper;
+	protected MessageListHelper messageListHelper;
+	protected MoreHelper moreHelper;
+	protected OneToOneChatFollowersHelper oneTooneChatFollowersHelper;
+	protected OneToOneChatHelper oneTooneChatHelper;
+	protected ProfileHelper profileHelper;
+	protected ScenarioListHelper scenarioListHelper;
+	protected SettingHelper settingHelper; 
+	protected SideMenuHelper sideMenuHelper;
+	protected SocialLoginHelper socialLoginHelper;
+	protected TimelineHelper timelineHelper;
+	protected UserAccountHelper userAccountHelper;
 	
 	protected static String timeGMT;
 	protected String testName = "";
@@ -75,6 +137,9 @@ public class WebTestBase {
 	public static Actions actions;
 	public static WebDriverWait wait;
 	int i = 1;
+	
+	//capture screenshots of failures
+	CaptureScreenshots captureScreenShots = null;
 	
 	//builds a new report using the html template 
 	ExtentHtmlReporter htmlReporter;
@@ -109,7 +174,9 @@ public class WebTestBase {
 			case "chrome" : 
 				System.setProperty("webdriver.chrome.driver", path + prop.getProperty("windows_chrome_path"));
 				options = new ChromeOptions();
-				options.addArguments("disable-infobars");
+				options.addArguments("--disable-infobars");
+				options.addArguments("--disable-notifications");
+
 				driver = new ChromeDriver(options);
 				break;
 			
@@ -128,7 +195,9 @@ public class WebTestBase {
 				System.out.println("Initialization linux2");
 				//System.out.println("Initialization ");
 				options = new ChromeOptions();
-				options.addArguments("disable-infobars");	
+				options.addArguments("--disable-infobars");
+				options.addArguments("--disable-notifications");
+				
 				driver = new ChromeDriver(options);
 				System.out.println("Initialization linux3");
 				break;
@@ -148,7 +217,9 @@ public class WebTestBase {
 				System.setProperty("webdriver.chrome.driver", path + prop.getProperty("mac_chrome_path"));
 				System.out.println("Initialization mac2");
 				options = new ChromeOptions();
-				options.addArguments("disable-infobars");
+				options.addArguments("--disable-infobars");
+				options.addArguments("--disable-notifications");
+				
 				driver = new ChromeDriver(options);
 				System.out.println("Initialization mac3");
 				break;
@@ -237,8 +308,13 @@ public class WebTestBase {
 	
 	
 	@AfterMethod
-	public void getResult(ITestResult result) {
+	public void getResult(ITestResult result) throws IOException, InterruptedException {
         if(result.getStatus() == ITestResult.FAILURE) {
+        	
+        	String testName = result.getMethod().getMethodName();			
+			captureScreenShots = new CaptureScreenshots();
+			captureScreenShots.captureFailedTCScreenshot(driver, testName);
+			
             test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
             test.fail(result.getThrowable());
         }
@@ -366,13 +442,74 @@ public class WebTestBase {
 	public void initializePageHelperObjects(){		
 		
 		signupHelper = new SignupHelper(driver);
+		addfriendHelper = new AddFriendHelper(driver);
+		adminhomeHelper = new AdminHomeHelper(driver);
+		appdownloadHelper = new AppDownloadHelper(driver);
+		channelHelper = new ChannelHelper(driver);
+		composeMessageHelper = new ComposeMessageHelper(driver);
+		composeScenarioHelper = new ComposeScenarioHelper(driver);
+		createnewChannelHelper = new CreateNewChannelHelper(driver);
+		createnewGroupHelper = new CreateNewGroupHelper(driver);
+		customerSupportHelper = new CustomerSupportHelper(driver);
+		faqHelper = new FAQHelper(driver);
+		generalChatHelper = new GeneralChatHelper(driver);
+		generalHelper = new GeneralHelper(driver);
+		generalHomeHelper  = new GeneralHomeHelper(driver);
+		generalSettingHelper = new GeneralSettingHelper(driver);
+		greetingMessageHelper = new GreetingMessageHelper(driver);
+		homePageHelper = new HomePageHelper(driver);
+		insightsAnalyticsHelper = new InsightsAnalyticsHelper(driver);
+		invitationHelper = new InvitationHelper(driver);
+		loginBonusHelper = new LoginBonusHelper(driver);
+		loginHelper = new LoginHelper(driver);
+		messageListHelper = new MessageListHelper(driver);
+		moreHelper = new MoreHelper(driver);
+		oneTooneChatFollowersHelper = new OneToOneChatFollowersHelper(driver);
+		oneTooneChatHelper = new OneToOneChatHelper(driver);
+		profileHelper = new ProfileHelper(driver);
+		scenarioListHelper = new ScenarioListHelper(driver);
+		settingHelper = new SettingHelper(driver); 
+		sideMenuHelper = new SideMenuHelper(driver);
+		signupHelper = new SignupHelper(driver);
+		socialLoginHelper = new SocialLoginHelper(driver);
+		timelineHelper = new TimelineHelper(driver);
+		userAccountHelper = new UserAccountHelper(driver); 
 	}	
 	
 	public void cleanUpPageHelperObjects(){			
 		
-		 driver=null;
-		 signupHelper=null;
-	}	
-		
-
+		 driver = null;
+		 signupHelper = null;
+		 addfriendHelper = null;                                  
+		 adminhomeHelper = null;                                  
+         appdownloadHelper = null;                              
+         channelHelper = null;                                      
+         composeMessageHelper = null;                        
+         composeScenarioHelper = null;                      
+         createnewChannelHelper = null;                    
+         createnewGroupHelper = null;                        
+         customerSupportHelper = null;                     
+         faqHelper = null;                                              
+         generalChatHelper = null;                              
+         generalHelper = null;                                      
+         generalHomeHelper = null;                              
+         generalSettingHelper = null;                        
+         greetingMessageHelper = null;                      
+         homePageHelper = null;                                    
+         insightsAnalyticsHelper = null;                  
+         invitationHelper = null;                                
+         loginBonusHelper = null;                                
+         loginHelper = null;                                          
+         messageListHelper = null;                              
+         moreHelper = null;                                            
+         oneTooneChatFollowersHelper = null;          
+         oneTooneChatHelper = null;                            
+         profileHelper = null;                                      
+         scenarioListHelper = null;                            
+         settingHelper = null;                                      
+         sideMenuHelper = null;                                    
+         socialLoginHelper = null;                              
+         timelineHelper = null;                                    
+         userAccountHelper = null;
+	}
 }

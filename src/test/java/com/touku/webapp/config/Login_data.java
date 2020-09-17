@@ -8,9 +8,9 @@ package com.touku.webapp.config;
 public class Login_data {
 
 	public enum Login_enum{
-		
-		Login1("",""),
-		Login2("","");
+		//TEST LOGIN DATA
+		Login1("py123","py123456"),
+		Login2("py676","py676767");
 		
 		public String username;
 		public String password;
