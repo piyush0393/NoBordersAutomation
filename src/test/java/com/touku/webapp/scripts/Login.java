@@ -25,7 +25,7 @@ public class Login extends WebTestBase{
 	}
 	
 	@Test(priority = 3)
-	public void VerifyLoginBtnClick_3() {
+	public void TC_VerifyLoginBtnClick_3() {
 		test = extent.createTest("VerifyLoginBtnClick_3");
 		homePageHelper.LoginBtnHomePage.click();
 	}

@@ -12,6 +12,9 @@ public class ScenarioListHelper {
 		PageFactory.initElements(driver, this);
 	}
 	
+	@FindBy(xpath = "//body/ngx-dashboard[1]/nb-layout[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nb-layout-column[1]/div[1]/div[1]/div[2]/ngx-sidebar[1]/div[1]/ul[1]/li[1]/div[4]/ul[1]/li[3]/div[1]/span[2]")
+	public WebElement SideMenuOptionScenario;
+	
 	@FindBy(xpath = "//span[contains(text(),'Scenario List')]")
 	public WebElement ScenarioListHeading;
 	
@@ -61,13 +64,13 @@ public class ScenarioListHelper {
 	public WebElement DraftsContentTD2;
 	
 	@FindBy(xpath = "//th[3]//b[1]")
-	public WebElement TargetContentTD3;
+	public WebElement DraftsTargetContentTD3;
 	
 	@FindBy(xpath = "//b[contains(text(),'Number of Target')]")
-	public WebElement NumberofTargetTD4;
+	public WebElement DraftsNumberofTargetTD4;
 	
 	@FindBy(xpath = "//b[contains(text(),'Scheduled At')]")
-	public WebElement ScheduledAtTD5;
+	public WebElement DraftsScheduledAtTD5;
 	
 	@FindBy(xpath = "//div[contains(text(),\"You don't have any drafts saved right now. To crea\")]")
 	public WebElement DefaultDraftsMessage;

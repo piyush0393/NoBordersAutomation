@@ -12,6 +12,10 @@ public class MessageListHelper {
 		PageFactory.initElements(driver, this);
 	}
 	
+	
+	@FindBy(xpath = "//span[contains(text(),'Messages')]")
+	public WebElement SideMenuOptionMessages;
+	
 	@FindBy(xpath = "//span[contains(text(),'Message List')]")
 	public WebElement MessageListHeader;
 	
@@ -94,5 +98,11 @@ public class MessageListHelper {
 	public WebElement ScheduledAtTH;
 	
 	@FindBy(xpath = "//div[contains(text(),\"You don't have any messages scheduled right now. T\")]")
-	public WebElement DefaultMessage;
+	public WebElement DefaultMessageScheduledMessage;
+	
+	@FindBy(xpath = "//div[contains(text(),\"You don't have any drafts saved right now. To crea\")]")
+	public WebElement DefaultMessageDrafts;
+	
+	@FindBy(xpath = "//div[contains(text(),'No sent messages yet!')]")
+	public WebElement DefaultMessageSent;
 }

@@ -205,103 +205,455 @@ public class Signup extends WebTestBase{
 		Assert.assertTrue(CurrentURL.equals(URL_enum.URL_Signup.URL),"The URL is not same as expected");
 	}
 	
-	//Verify All Signup Step 1 elements  ---- TO BE DONE
-	//Perform Signup Step 1 actions
+	//Verify All Signup Step 1 elements 
 	
 	@Test(priority = 24)
+	public void TC_SignupBackButtonVerify_24() {
+		test = extent.createTest("TC_SignupBackButtonVerify_24");
+		if(signupHelper.SignupBackButton.isDisplayed())
+			System.out.println("SignupBackButton available");
+		else 
+			System.out.println("SignupBackButton Missing");
+	}
+	@Test(priority = 25)
+	public void TC_SignupStepSelected1Verify_25() {
+		test = extent.createTest("TC_SignupStepSelected1Verify_25");
+		if(signupHelper.SignupStepSelected1.isDisplayed())
+			System.out.println("SignupStepSelected1 available");
+		else 
+			System.out.println("SignupStepSelected1 Missing");
+	}
+	@Test(priority = 26)
+	public void TC_SignupStep2Verify_26() {
+		test = extent.createTest("TC_SignupStep2Verify_26");
+		if(signupHelper.SignupStep2.isDisplayed())
+			System.out.println("SignupStep2 available");
+		else 
+			System.out.println("SignupStep2 Missing");
+	}
+	@Test(priority = 27)
+	public void TC_SignupStep3Verify_27() {
+		test = extent.createTest("TC_SignupStep3Verify_27");
+		if(signupHelper.SignupStep3.isDisplayed())
+			System.out.println("SignupStep3 available");
+		else 
+			System.out.println("SignupStep3 Missing");
+	}
+	@Test(priority = 28)
+	public void TC_SelectedLangOptionVerify_28() {
+		test = extent.createTest("TC_SelectedLangOptionVerify_28");
+		if(signupHelper.SelectedLangOption.isDisplayed())
+			System.out.println("SelectedLangOption available");
+		else 
+			System.out.println("SelectedLangOption Missing");
+	}
+	@Test(priority = 29)
+	public void TC_SelectedLangOptionWithOpenDropdownVerify_29() {
+		test = extent.createTest("TC_SelectedLangOptionWithOpenDropdownVerify_29");
+		if(signupHelper.SelectedLangOptionWithOpenDropdown.isDisplayed())
+			System.out.println("SelectedLangOptionWithOpenDropdown available");
+		else 
+			System.out.println("SelectedLangOptionWithOpenDropdown Missing");
+	}
+	@Test(priority = 30)
+	public void TC_Step1DescriptionVerify_30() {
+		test = extent.createTest("TC_Step1DescriptionVerify_30");
+		if(signupHelper.Step1Description.isDisplayed())
+			System.out.println("Step1Description available");
+		else 
+			System.out.println("Step1Description Missing");
+	}
+	@Test(priority = 31)
+	public void TC_CountryDropdownBtnVerify_31() {
+		test = extent.createTest("TC_CountryDropdownBtnVerify_31");
+		if(signupHelper.CountryDropdownBtn.isDisplayed())
+			System.out.println("CountryDropdownBtn available");
+		else 
+			System.out.println("CountryDropdownBtn Missing");
+	}
+	@Test(priority = 32)
+	public void TC_SignupCountryName1Verify_32() {
+		test = extent.createTest("TC_SignupCountryName1Verify_32");
+		if(signupHelper.SignupCountryName1.isDisplayed())
+			System.out.println("SignupCountryName1 available");
+		else 
+			System.out.println("SignupCountryName1 Missing");
+	}
+	@Test(priority = 33)
+	public void TC_DefaultFlagSelectedVerify_33() {
+		test = extent.createTest("TC_DefaultFlagSelectedVerify_33");
+		if(signupHelper.DefaultFlagSelected.isDisplayed())
+			System.out.println("DefaultFlagSelected available");
+		else 
+			System.out.println("DefaultFlagSelected Missing");
+	}
+	@Test(priority = 34)
+	public void TC_IndiaFlagSelectedVerify_34() {
+		test = extent.createTest("TC_IndiaFlagSelectedVerify_34");
+		if(signupHelper.IndiaFlagSelected.isDisplayed())
+			System.out.println("IndiaFlagSelected available");
+		else 
+			System.out.println("IndiaFlagSelected Missing");
+	}
+	@Test(priority = 35)
+	public void TC_Field_EnterPhoneNumberVerify_35() {
+		test = extent.createTest("TC_Field_EnterPhoneNumberVerify_35");
+		if(signupHelper.Field_EnterPhoneNumber.isDisplayed())
+			System.out.println("Field_EnterPhoneNumber available");
+		else 
+			System.out.println("Field_EnterPhoneNumber Missing");
+	}
+	@Test(priority = 36)
+	public void TC_SendSMS_BtnVerify_36() {
+		test = extent.createTest("TC_SendSMS_BtnVerify_36");
+		if(signupHelper.SendSMS_Btn.isDisplayed())
+			System.out.println("SendSMS_Btn available");
+		else 
+			System.out.println("SendSMS_Btn Missing");
+	}
+	@Test(priority = 37)
+	public void TC_Field_EnterSMSVerCodeVerify_37() {
+		test = extent.createTest("TC_Field_EnterSMSVerCodeVerify_37");
+		if(signupHelper.Field_EnterSMSVerCode.isDisplayed())
+			System.out.println("Field_EnterSMSVerCode available");
+		else 
+			System.out.println("Field_EnterSMSVerCode Missing");
+	}
+	@Test(priority = 38)
+	public void TC_NextBtnVerify_38() {
+		test = extent.createTest("TC_NextBtnVerify_38");
+		if(signupHelper.NextBtn.isDisplayed())
+			System.out.println("NextBtn available");
+		else 
+			System.out.println("NextBtn Missing");
+	}
+	
+	
+	//Perform Signup Step 1 actions
+	
+	@Test(priority = 39)
 	public void TC_SelectCountryCode_23() {
 		test = extent.createTest("TC_SelectCountryCode_23");
 		signupHelper.Field_EnterPhoneNumber.clear();
 		signupHelper.Field_EnterPhoneNumber.sendKeys(Signup_enum.Signup4.CountryCode);
 	}
 	
-	@Test(priority = 25)
+	@Test(priority = 40)
 	public void TC_EnterPhoneNumber_24() {
 		test = extent.createTest("TC_EnterPhoneNumber_24");
 		signupHelper.Field_EnterPhoneNumber.sendKeys(Signup_enum.Signup4.MobileNumber);
 	}
 	
-	@Test(priority = 26)
+	@Test(priority = 41)
 	public void TC_VerifyClickSMSButton_25() {
 		test = extent.createTest("TC_VerifyClickSMSButton_25");
 		signupHelper.SendSMS_Btn.click();
 	}
 	
-	@Test(priority = 27)
+	@Test(priority = 42)
 	public void TC_EnterSMSVerificationCode_26() {
 		test = extent.createTest("TC_EnterSMSVerificationCode_26");
 		signupHelper.Field_EnterSMSVerCode.sendKeys(Signup_enum.Signup4.SMSVerCode);
 	}
 	
-	@Test(priority = 28)
+	@Test(priority = 43)
 	public void TC_ClickNext_27() {
 		test = extent.createTest("TC_ClickNext_27");
 		signupHelper.NextBtn.click();
 	}
 	
-	//Verify All Signup Step 2 elements   ---- TO BE DONE
+	//Verify All Signup Step 2 elements 
+	
+	@Test(priority = 44)
+	public void TC_SignupStep2SelectedVerify_44() {
+		test = extent.createTest("TC_SignupStep2SelectedVerify_44");
+		if(signupHelper.SignupStep2Selected.isDisplayed())
+			System.out.println("SignupStep2Selected available");
+		else 
+			System.out.println("SignupStep2Selected Missing");
+	}
+	@Test(priority = 45)
+	public void TC_Step2DescriptionVerify_45() {
+		test = extent.createTest("TC_Step2DescriptionVerify_45");
+		if(signupHelper.Step2Description.isDisplayed())
+			System.out.println("Step2Description available");
+		else 
+			System.out.println("Step2Description Missing");
+	}
+	@Test(priority = 46)
+	public void TC_EnterEmailVerify_46() {
+		test = extent.createTest("TC_EnterEmailVerify_46");
+		if(signupHelper.EnterEmail.isDisplayed())
+			System.out.println("EnterEmail available");
+		else 
+			System.out.println("EnterEmail Missing");
+	}
+	@Test(priority = 47)
+	public void TC_InvalidEmailAlertTextVerify_47() {
+		test = extent.createTest("TC_InvalidEmailAlertTextVerify_47");
+		if(signupHelper.InvalidEmailAlertText.isDisplayed())
+			System.out.println("InvalidEmailAlertText available");
+		else 
+			System.out.println("InvalidEmailAlertText Missing");
+	}
+	@Test(priority = 48)
+	public void TC_ConfirmEmailVerify_48() {
+		test = extent.createTest("TC_ConfirmEmailVerify_48");
+		if(signupHelper.ConfirmEmail.isDisplayed())
+			System.out.println("ConfirmEmail available");
+		else 
+			System.out.println("ConfirmEmail Missing");
+	}
+	@Test(priority = 49)
+	public void TC_ConfirmEmailNotSameVerify_49() {
+		test = extent.createTest("TC_ConfirmEmailNotSameVerify_49");
+		if(signupHelper.ConfirmEmailNotSame.isDisplayed())
+			System.out.println("ConfirmEmailNotSame available");
+		else 
+			System.out.println("ConfirmEmailNotSame Missing");
+	}
+	@Test(priority = 50)
+	public void TC_CorrectTickMarkVerify_50() {
+		test = extent.createTest("TC_CorrectTickMarkVerify_50");
+		if(signupHelper.CorrectTickMark.isDisplayed())
+			System.out.println("CorrectTickMark available");
+		else 
+			System.out.println("CorrectTickMark Missing");
+	}
+	@Test(priority = 51)
+	public void TC_WrongCrossMarkVerify_51() {
+		test = extent.createTest("TC_WrongCrossMarkVerify_51");
+		if(signupHelper.WrongCrossMark.isDisplayed())
+			System.out.println("WrongCrossMark available");
+		else 
+			System.out.println("WrongCrossMark Missing");
+	}
+	@Test(priority = 52)
+	public void TC_Step2NextBtnVerify_52() {
+		test = extent.createTest("TC_Step2NextBtnVerify_52");
+		if(signupHelper.Step2NextBtn.isDisplayed())
+			System.out.println("Step2NextBtn available");
+		else 
+			System.out.println("Step2NextBtn Missing");
+	}
+	
 	//Perform Signup Step 2 Actions
 	
-	@Test(priority = 29)
+	@Test(priority = 53)
 	public void TC_enterEmailAddress_28() {
 		test = extent.createTest("TC_enterEmailAddress_28");
 		signupHelper.EnterEmail.sendKeys(Signup_Email_enum.Signup_email2.Email);
 	}
 	
-	@Test(priority = 30)
+	@Test(priority = 54)
 	public void TC_verifyEmailConfirmation_29() {
 		test = extent.createTest("TC_verifyEmailConfirmation_29");
 		signupHelper.ConfirmEmail.sendKeys(Signup_Email_enum.Signup_email2.ConfirmEmail);
 	}
 	
-	@Test(priority = 31)
+	@Test(priority = 55)
 	public void TC_verifyClickNext_30() {
 		test = extent.createTest("TC_verifyClickNext_30");
 		signupHelper.Step2NextBtn.click();
 	}
 	
 	//Verify all Signup Step 3 elements   ---- TO BE DONE
+	
+	@Test(priority = 56)
+	public void TC_SignupStep3SelectedVerify_56() {
+		test = extent.createTest("TC_SignupStep3SelectedVerify_56");
+		if(signupHelper.SignupStep3Selected.isDisplayed())
+			System.out.println("SignupStep3Selected available");
+		else 
+			System.out.println("SignupStep3Selected Missing");
+	}
+	@Test(priority = 57)
+	public void TC_Step3DescriptionVerify_57() {
+		test = extent.createTest("TC_Step3DescriptionVerify_57");
+		if(signupHelper.Step3Description.isDisplayed())
+			System.out.println("Step3Description available");
+		else 
+			System.out.println("Step3Description Missing");
+	}
+	@Test(priority = 58)
+	public void TC_EnterUsernameVerify_58() {
+		test = extent.createTest("TC_EnterUsernameVerify_58");
+		if(signupHelper.EnterUsername.isDisplayed())
+			System.out.println("EnterUsername available");
+		else 
+			System.out.println("EnterUsername Missing");
+	}
+	@Test(priority = 59)
+	public void TC_InvalidUsernameTextVerify_59() {
+		test = extent.createTest("TC_InvalidUsernameTextVerify_59");
+		if(signupHelper.InvalidUsernameText.isDisplayed())
+			System.out.println("InvalidUsernameText available");
+		else 
+			System.out.println("InvalidUsernameText Missing");
+	}
+	@Test(priority = 60)
+	public void TC_EnterPasswdVerify_60() {
+		test = extent.createTest("TC_EnterPasswdVerify_60");
+		if(signupHelper.EnterPasswd.isDisplayed())
+			System.out.println("EnterPasswd available");
+		else 
+			System.out.println("EnterPasswd Missing");
+	}
+	@Test(priority = 61)
+	public void TC_InvalidPasswdTextVerify_61() {
+		test = extent.createTest("TC_InvalidPasswdTextVerify_61");
+		if(signupHelper.InvalidPasswdText.isDisplayed())
+			System.out.println("InvalidPasswdText available");
+		else 
+			System.out.println("InvalidPasswdText Missing");
+	}
+	@Test(priority = 62)
+	public void TC_InvalidPasswdCharacterCountVerify_62() {
+		test = extent.createTest("TC_InvalidPasswdCharacterCountVerify_62");
+		if(signupHelper.InvalidPasswdCharacterCount.isDisplayed())
+			System.out.println("InvalidPasswdCharacterCount available");
+		else 
+			System.out.println("InvalidPasswdCharacterCount Missing");
+	}
+	@Test(priority = 63)
+	public void TC_Re_EnterPasswdVerify_63() {
+		test = extent.createTest("TC_Re_EnterPasswdVerify_63");
+		if(signupHelper.Re_EnterPasswd.isDisplayed())
+			System.out.println("Re_EnterPasswd available");
+		else 
+			System.out.println("Re_EnterPasswd Missing");
+	}
+	@Test(priority = 64)
+	public void TC_InvalidRe_EnterPasswdTextVerify_20() {
+		test = extent.createTest("TC_InvalidRe_EnterPasswdTextVerify_20");
+		if(signupHelper.InvalidRe_EnterPasswdText.isDisplayed())
+			System.out.println("InvalidRe_EnterPasswdText available");
+		else 
+			System.out.println("InvalidRe_EnterPasswdText Missing");
+	}
+	@Test(priority = 65)
+	public void TC_ConfirmPasswdNotSameVerify_65() {
+		test = extent.createTest("TC_ConfirmPasswdNotSameVerify_65");
+		if(signupHelper.ConfirmPasswdNotSame.isDisplayed())
+			System.out.println("ConfirmPasswdNotSame available");
+		else 
+			System.out.println("ConfirmPasswdNotSame Missing");
+	}
+	@Test(priority = 66)
+	public void TC_HidePasswdVerify_66() {
+		test = extent.createTest("TC_HidePasswdVerify_66");
+		if(signupHelper.HidePasswd.isDisplayed())
+			System.out.println("HidePasswd available");
+		else 
+			System.out.println("HidePasswd Missing");
+	}
+	@Test(priority = 67)
+	public void TC_ShowPasswdVerify_() {
+		test = extent.createTest("TC_ShowPasswdVerify_20");
+		if(signupHelper.ShowPasswd.isDisplayed())
+			System.out.println("ShowPasswd available");
+		else 
+			System.out.println("ShowPasswd Missing");
+	}
+	@Test(priority = 68)
+	public void TC_SignupPageButtonVerify_68() {
+		test = extent.createTest("TC_SignupPageButtonVerify_68");
+		if(signupHelper.SignupPageButton.isDisplayed())
+			System.out.println("SignupPageButton available");
+		else 
+			System.out.println("SignupPageButton Missing");
+	}
+	@Test(priority = 69)
+	public void TC_AgreeTermsnConditionVerify_69() {
+		test = extent.createTest("TC_AgreeTermsnConditionVerify_69");
+		if(signupHelper.AgreeTermsnCondition.isDisplayed())
+			System.out.println("AgreeTermsnCondition available");
+		else 
+		
+			System.out.println("AgreeTermsnCondition Missing");
+	}
+	@Test(priority = 70)
+	public void TC_TermsCheckBoxVerify_70() {
+		test = extent.createTest("TC_TermsCheckBoxVerify_70");
+		if(signupHelper.TermsCheckBox.isDisplayed())
+			System.out.println("TermsCheckBox available");
+		else 
+			System.out.println("TermsCheckBox Missing");
+	}
+	@Test(priority = 71)
+	public void TC_TermsCheckBox2Verify_71() {
+		test = extent.createTest("TC_TermsCheckBox2Verify_71");
+		if(signupHelper.TermsCheckBox2.isDisplayed())
+			System.out.println("TermsCheckBox2 available");
+		else 
+			System.out.println("TermsCheckBox2 Missing");
+	}
+	@Test(priority = 72)
+	public void TC_AngeliumTermsnconditionsVerify_72() {
+		test = extent.createTest("TC_AngeliumTermsnconditionsVerify_72");
+		if(signupHelper.AngeliumTermsnconditions.isDisplayed())
+			System.out.println("AngeliumTermsnconditions available");
+		else 
+			System.out.println("AngeliumTermsnconditions Missing");
+	}
+	@Test(priority = 73)
+	public void TC_TermsCloseBtnVerify_73() {
+		test = extent.createTest("TC_TermsCloseBtnVerify_73");
+		if(signupHelper.TermsCloseBtn.isDisplayed())
+			System.out.println("TermsCloseBtn available");
+		else 
+			System.out.println("TermsCloseBtn Missing");
+	}
+	@Test(priority = 74)
+	public void TC_TermsnConditionsCloseBtnVerify_74() {
+		test = extent.createTest("TC_TermsnConditionsCloseBtnVerify_74");
+		if(signupHelper.TermsnConditionsCloseBtn.isDisplayed())
+			System.out.println("TermsnConditionsCloseBtn available");
+		else 
+			System.out.println("TermsnConditionsCloseBtn Missing");
+	}
+	
 	//Perform Signup Step 3 Actions
 	
-	@Test(priority = 32)
-	public void TC_VerifyEnterUsername_31() {
-		test = extent.createTest("TC_VerifyEnterUsername_31");
+	@Test(priority = 75)
+	public void TC_VerifyEnterUsername_75() {
+		test = extent.createTest("TC_VerifyEnterUsername_75");
 		signupHelper.EnterUsername.sendKeys(Signup_UnamePassword_enum.Signup_UnamePassword2.Username);
 	}
 	
-	@Test(priority = 33)
-	public void TC_VerifyEnterNewLoginPassword_32() {
-		test = extent.createTest("TC_VerifyEnterNewLoginPassword_32");
+	@Test(priority = 76)
+	public void TC_VerifyEnterNewLoginPassword_76() {
+		test = extent.createTest("TC_VerifyEnterNewLoginPassword_76");
 		signupHelper.EnterPasswd.sendKeys(Signup_UnamePassword_enum.Signup_UnamePassword2.Password);
 	}
 	
-	@Test(priority = 34)
-	public void TC_VerifyReEnterLoginPassword_33() {
-		test = extent.createTest("TC_VerifyReEnterLoginPassword_33");
+	@Test(priority = 77)
+	public void TC_VerifyReEnterLoginPassword_77() {
+		test = extent.createTest("TC_VerifyReEnterLoginPassword_77");
 		signupHelper.Re_EnterPasswd.sendKeys(Signup_UnamePassword_enum.Signup_UnamePassword2.ConfirmPasswd);
 	}
-	
-	@Test(priority = 35)
-	public void TC_ViewTermsandConditions_34() {
-		test = extent.createTest("TC_ViewTermsandConditions_34");
+		
+	@Test(priority = 78)
+	public void TC_ViewTermsandConditions_78() {
+		test = extent.createTest("TC_ViewTermsandConditions_78");
 		signupHelper.AgreeTermsnCondition.click();
 	}
 	
-	@Test(priority = 36)
-	public void TC_CloseTermsandConditionsPopup_35() {
-		test = extent.createTest("TC_CloseTermsandConditionsPopup_35");
+	@Test(priority = 79)
+	public void TC_CloseTermsandConditionsPopup_79() {
+		test = extent.createTest("TC_CloseTermsandConditionsPopup_79");
 		signupHelper.TermsnConditionsCloseBtn.click();
 	}
 	
-	@Test(priority = 37)
-	public void TC_AcceptTermsandConditions_36() {
-		test = extent.createTest("TC_AcceptTermsandConditions_36");
+	@Test(priority = 80)
+	public void TC_AcceptTermsandConditions_80() {
+		test = extent.createTest("TC_AcceptTermsandConditions_80");
 		signupHelper.TermsCheckBox2.click();
 	}
 	
-	@Test(priority = 38)
-	public void TC_VerifyClickSignupButton_37() {
-		test = extent.createTest("TC_VerifyClickSignupButton_37");
+	@Test(priority = 81)
+	public void TC_VerifyClickSignupButton_81() {
+		test = extent.createTest("TC_VerifyClickSignupButton_81");
 		signupHelper.SignupPageButton.click();
 	}
 }
