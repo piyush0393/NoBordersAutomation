@@ -3,34 +3,43 @@ package com.touku.webapp.scripts;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.touku.webapp.config.Login_data.Login_enum;
 import com.touku.webapp.config.URL_data.URL_enum;
 import com.touku.webapp.testbase.WebTestBase;
 
 public class ScenarioList extends WebTestBase{
-
-Login login = new Login();
 	
 	@Test(priority = 1)
 	public void TC_URLVerify_1() {
 		test = extent.createTest("TC_URLVerify_1");
-		login.TC_URLVerify_1();
+		String CurrentURL = driver.getCurrentUrl();
+		Assert.assertTrue(CurrentURL.equals(URL_enum.URL_WelcomeHome.URL), "The URL is not same as expected");
 	}
 	
 	@Test(priority = 2)
 	public void TC_ChangeLanguageFlag_2() {
 		test = extent.createTest("TC_ChangeLangaugeFlag_2");
-		login.TC_ChangeLanguageFlag();
+		homePageHelper.LanguageFlagHomePage.click();
+		homePageHelper.EnglishFlag.click();
 	}
 	
 	@Test(priority = 3)
 	public void TC_LoginUser_3() {
 		test = extent.createTest("TC_LoginUser_3");
-		login.TC_VerifyLoginBtnClick_3();
-		login.TC_LoginURLVerify_4();
-		login.TC_EnterUsername_30();
-		login.TC_EnterPasswd_31();
-		login.TC_ClickRememberMeCheck_32();
-		login.TC_ClickLoginButton_33();
+		
+		homePageHelper.LoginBtnHomePage.click();
+		
+		String CurrentURL = driver.getCurrentUrl();
+		Assert.assertTrue(CurrentURL.equals(URL_enum.URL_Login.URL), "The URL is not same as expected");
+		
+		loginHelper.EnterUsername.sendKeys(Login_enum.Login1.username);
+		
+		loginHelper.EnterPasswd.sendKeys(Login_enum.Login1.password);
+		
+		loginHelper.RememberMeCheckbox2.click();
+		
+		loginHelper.LoginPageLoginBtn.click();
+		
 	}
 
 	@Test(priority = 4)

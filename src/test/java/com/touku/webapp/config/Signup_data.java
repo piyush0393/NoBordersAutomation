@@ -11,7 +11,7 @@ public class Signup_data {
 				
 		Signup1("+91","7355341728","107893"),
 		Signup2("+91","8792656462","107893"),
-		Signup3("+91","8787698987","107893"),
+		Signup3("+91","8787698965","107893"),
 		Signup4("+91","8787698768","107893");
 			
 
@@ -48,6 +48,7 @@ public class Signup_data {
 		
 		Signup_UnamePassword1("py123","py123456","py123456"),
 		Signup_UnamePassword2("py676","py676767","py676767"),
+		Signup_UnamePassword3("py656","py656767","py656767"),
 		Signup_Invalid_ConfirmPasswd1("py345","py345656","py3457"),
 		Signup_Invalid_PasswdLength1("py345","py6567","py6567");	
 

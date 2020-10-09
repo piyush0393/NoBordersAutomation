@@ -25,7 +25,7 @@ public class MessageListHelper {
 	@FindBy(xpath = "//span[contains(@class,'chnanel-name-dynamic')]")
 	public WebElement DynamicChannelName;
 	
-	@FindBy(xpath = "//button[contains(@class,'btn btn-success pointer new-compose-btn')]")
+	@FindBy(xpath = "//button[contains(text(),'Compose New')])]")
 	public WebElement ComposeNewButton;
 	
 	@FindBy(xpath = "//span[@class='nav-link name-tab active']")

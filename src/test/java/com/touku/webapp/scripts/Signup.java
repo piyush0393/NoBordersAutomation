@@ -618,19 +618,19 @@ public class Signup extends WebTestBase{
 	@Test(priority = 75)
 	public void TC_VerifyEnterUsername_75() {
 		test = extent.createTest("TC_VerifyEnterUsername_75");
-		signupHelper.EnterUsername.sendKeys(Signup_UnamePassword_enum.Signup_UnamePassword2.Username);
+		signupHelper.EnterUsername.sendKeys(Signup_UnamePassword_enum.Signup_UnamePassword3.Username);
 	}
 	
 	@Test(priority = 76)
 	public void TC_VerifyEnterNewLoginPassword_76() {
 		test = extent.createTest("TC_VerifyEnterNewLoginPassword_76");
-		signupHelper.EnterPasswd.sendKeys(Signup_UnamePassword_enum.Signup_UnamePassword2.Password);
+		signupHelper.EnterPasswd.sendKeys(Signup_UnamePassword_enum.Signup_UnamePassword3.Password);
 	}
 	
 	@Test(priority = 77)
 	public void TC_VerifyReEnterLoginPassword_77() {
 		test = extent.createTest("TC_VerifyReEnterLoginPassword_77");
-		signupHelper.Re_EnterPasswd.sendKeys(Signup_UnamePassword_enum.Signup_UnamePassword2.ConfirmPasswd);
+		signupHelper.Re_EnterPasswd.sendKeys(Signup_UnamePassword_enum.Signup_UnamePassword3.ConfirmPasswd);
 	}
 		
 	@Test(priority = 78)

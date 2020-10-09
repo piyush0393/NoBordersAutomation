@@ -43,6 +43,7 @@ import com.touku.webapp.helpers.SignupHelper;
 import com.touku.webapp.helpers.SocialLoginHelper;
 import com.touku.webapp.helpers.TimelineHelper;
 import com.touku.webapp.helpers.UserAccountHelper;
+import com.touku.webapp.scripts.Login;
 import com.touku.webapp.utilities.CaptureScreenshots;
 
 import org.testng.annotations.AfterClass;
@@ -128,6 +129,10 @@ public class WebTestBase {
 	protected TimelineHelper timelineHelper;
 	protected UserAccountHelper userAccountHelper;
 	
+	
+	protected static Login login;
+	
+	
 	protected static String timeGMT;
 	protected String testName = "";
 	protected String[] groups = null;
@@ -144,10 +149,10 @@ public class WebTestBase {
 	//builds a new report using the html template 
 	ExtentHtmlReporter htmlReporter;
     protected JavascriptExecutor js;
-    protected ExtentReports extent;
+    protected static ExtentReports extent;
     
     //helps to generate the logs in test report.
-    protected ExtentTest test;
+    protected static ExtentTest test;
 	
     public WebTestBase()
     { 
@@ -474,6 +479,7 @@ public class WebTestBase {
 		socialLoginHelper = new SocialLoginHelper(driver);
 		timelineHelper = new TimelineHelper(driver);
 		userAccountHelper = new UserAccountHelper(driver); 
+		login = new Login();
 	}	
 	
 	public void cleanUpPageHelperObjects(){			
@@ -511,5 +517,6 @@ public class WebTestBase {
          socialLoginHelper = null;                              
          timelineHelper = null;                                    
          userAccountHelper = null;
+         login = null;
 	}
 }

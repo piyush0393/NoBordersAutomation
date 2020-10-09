@@ -18,7 +18,7 @@ public class Messages_data {
 	
 	public enum ScheduleDateFilter_data {
 	
-		ScheduleDateFilter1("04012020","08012020"),
+		ScheduleDateFilter1("04-01-2020","08-01-2020"),
 		ScheduleDateFilter2("",""),
 		ScheduleDateFilter3("","");
 		

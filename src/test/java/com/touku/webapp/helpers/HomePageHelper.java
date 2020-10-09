@@ -31,7 +31,7 @@ public class HomePageHelper {
 	@FindBy(xpath = "//img[@class='lang-flag ng-star-inserted']")
 	public WebElement SelectedLangFlag;
 	
-	@FindBy(xpath = "//button[4]//div[1]//img[1]")
+	@FindBy(xpath = "//ngx-header/div[1]/div[1]/div[1]/button[2]/div[1]/img[1]")
 	public WebElement EnglishFlag;
 	
 	@FindBy(xpath = "//img[@class='lang-flag']")
