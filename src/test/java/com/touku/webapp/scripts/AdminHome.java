@@ -28,14 +28,15 @@ public class AdminHome extends WebTestBase{
 	}
 	
 	@Test(priority = 3)
-	public void TC_LoginUser_3() {
+	public void TC_LoginUser_3() throws InterruptedException {
 		test = extent.createTest("TC_LoginUser_3");
-		
+		Thread.sleep(2000);
 		homePageHelper.LoginBtnHomePage.click();
-		
+		Thread.sleep(1000);
 		String CurrentURL = driver.getCurrentUrl();
 		Assert.assertTrue(CurrentURL.equals(URL_enum.URL_Login.URL), "The URL is not same as expected");
 		
+		Thread.sleep(1500);
 		loginHelper.EnterUsername.sendKeys(Login_enum.Login1.username);
 		
 		loginHelper.EnterPasswd.sendKeys(Login_enum.Login1.password);
@@ -477,9 +478,10 @@ public class AdminHome extends WebTestBase{
 	}
 	
 	@Test(priority = 52)
-	public void TC_VerifyCreateNewMessageButtonClick_52() {
+	public void TC_VerifyCreateNewMessageButtonClick_52() throws InterruptedException {
 		test = extent.createTest("TC_VerifyCreateNewMessageButtonClick_52");
 		adminhomeHelper.CreateNewMessageButton.click();
+		Thread.sleep(2000);
 	}
 	
 	@Test(priority = 53)

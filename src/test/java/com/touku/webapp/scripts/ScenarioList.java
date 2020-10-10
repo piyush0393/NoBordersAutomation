@@ -24,14 +24,14 @@ public class ScenarioList extends WebTestBase{
 	}
 	
 	@Test(priority = 3)
-	public void TC_LoginUser_3() {
+	public void TC_LoginUser_3() throws InterruptedException {
 		test = extent.createTest("TC_LoginUser_3");
-		
+		Thread.sleep(2000);
 		homePageHelper.LoginBtnHomePage.click();
-		
+		Thread.sleep(1000);
 		String CurrentURL = driver.getCurrentUrl();
 		Assert.assertTrue(CurrentURL.equals(URL_enum.URL_Login.URL), "The URL is not same as expected");
-		
+		Thread.sleep(2000);
 		loginHelper.EnterUsername.sendKeys(Login_enum.Login1.username);
 		
 		loginHelper.EnterPasswd.sendKeys(Login_enum.Login1.password);
@@ -242,9 +242,10 @@ public class ScenarioList extends WebTestBase{
 	}
 	
 	@Test(priority = 26)
-	public void TC_VerifyComposeMessageButtonClick_89() {
+	public void TC_VerifyComposeMessageButtonClick_89() throws InterruptedException {
 		test = extent.createTest("TC_VerifyComposeMessageButtonClick_89");
 		scenarioListHelper.ComposeNewButton.click();
+		Thread.sleep(2000);
 	}
 	
 	@Test(priority = 27)
